@@ -3,1321 +3,168 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Buổi 1 · Nhập môn Lập trình Web (HTML · CSS · JavaScript)</title>
-<link rel="stylesheet" href="assets/deck.css">
+<title>Buổi 1 · Nhập môn Lập trình Web — Mục lục</title>
+<style>
+  :root {
+    --bg: #0e1020;
+    --panel: #171b35;
+    --line: #2c3364;
+    --text: #e8ecff;
+    --muted: #9aa3d0;
+    --orange: #ff6b35;
+    --blue: #4cc9f0;
+    --yellow: #ffd166;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 56px 24px;
+    font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+    color: var(--text);
+    background:
+      radial-gradient(900px 500px at 10% -10%, rgba(255,107,53,.18), transparent 60%),
+      radial-gradient(800px 500px at 100% 110%, rgba(76,201,240,.16), transparent 60%),
+      var(--bg);
+  }
+  .wrap { max-width: 980px; margin: 0 auto; }
+
+  .brand {
+    color: var(--orange);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+  }
+  h1 {
+    font-size: clamp(30px, 5vw, 48px);
+    line-height: 1.1;
+    margin: 10px 0 12px;
+    background: linear-gradient(90deg, #fff 10%, var(--orange) 60%, var(--yellow));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .lead { color: var(--muted); font-size: 17px; max-width: 620px; margin: 0 0 36px; }
+
+  .menu { display: grid; gap: 16px; }
+
+  /* Mỗi mục là một thẻ bấm được - bọc trong <a> để cả khối đều là link */
+  a.item {
+    display: grid;
+    grid-template-columns: 62px 1fr auto;
+    align-items: center;
+    gap: 18px;
+    padding: 20px 22px;
+    text-decoration: none;
+    color: inherit;
+    background: linear-gradient(180deg, var(--panel), rgba(23,27,53,.6));
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    transition: transform .2s, border-color .2s, box-shadow .2s;
+  }
+  a.item:hover {
+    transform: translateY(-3px);
+    border-color: var(--orange);
+    box-shadow: 0 12px 26px rgba(0,0,0,.35);
+  }
+  a.item .icon { font-size: 34px; text-align: center; }
+  a.item h2 { margin: 0 0 4px; font-size: 20px; }
+  a.item p { margin: 0; color: var(--muted); font-size: 14.5px; line-height: 1.55; }
+  a.item .go { color: var(--orange); font-size: 24px; }
+
+  .tag {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 99px;
+    border: 1px solid var(--line);
+    color: var(--muted);
+    margin-bottom: 7px;
+  }
+  .t-slide { color: var(--orange); border-color: rgba(255,107,53,.45); }
+  .t-demo  { color: var(--blue);   border-color: rgba(76,201,240,.45); }
+  .t-cheat { color: var(--yellow); border-color: rgba(255,209,102,.45); }
+
+  .note {
+    margin-top: 32px;
+    padding: 14px 18px;
+    border-left: 3px solid var(--blue);
+    background: rgba(76,201,240,.08);
+    border-radius: 0 10px 10px 0;
+    color: var(--muted);
+    font-size: 14.5px;
+  }
+  .note b { color: var(--text); }
+  kbd {
+    font-family: Consolas, monospace;
+    font-size: 12px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-bottom-width: 3px;
+    border-radius: 5px;
+    padding: 1px 6px;
+  }
+  footer { margin-top: 30px; color: var(--muted); font-size: 12.5px; text-align: center; }
+
+  @media (max-width: 620px) {
+    body { padding: 36px 16px; }
+    a.item { grid-template-columns: 44px 1fr; }
+    a.item .go { display: none; }
+  }
+</style>
 </head>
 <body>
 
-<div class="progress"></div>
-<div class="topbar">
-  <div class="brand">MindX · C4E · Web Dev</div>
-  <div class="chapter"></div>
+<div class="wrap">
+
+  <div class="brand">MindX · C4E · Lập trình Web</div>
+  <h1>Buổi 1 — Nhập môn<br>HTML · CSS · JavaScript</h1>
+  <p class="lead">Chọn một mục bên dưới để mở. Tất cả đều chạy ngay trong trình duyệt, không cần cài đặt gì thêm.</p>
+
+  <div class="menu">
+
+    <a class="item" href="slide.html">
+      <div class="icon">📽️</div>
+      <div>
+        <span class="tag t-slide">Slide bài giảng</span>
+        <h2>Bài giảng buổi 1</h2>
+        <p>46 slide từ “web hoạt động thế nào” đến HTML, CSS, JavaScript — kèm 24 ví dụ chạy trực tiếp. Dùng <kbd>→</kbd> <kbd>←</kbd> để chuyển, <kbd>O</kbd> xem mục lục.</p>
+      </div>
+      <div class="go">→</div>
+    </a>
+
+    <a class="item" href="vi-du-gioi-thieu-ban-than.html">
+      <div class="icon">🙋</div>
+      <div>
+        <span class="tag t-demo">Trang mẫu</span>
+        <h2>Giới thiệu bản thân (HTML thuần)</h2>
+        <p>Kết quả của bài Thực hành 1: tiêu đề, ảnh, danh sách, bảng, liên kết và form — chưa có CSS. Xem rồi tự làm lại một bản của riêng bạn.</p>
+      </div>
+      <div class="go">→</div>
+    </a>
+
+    <a class="item" href="cheatsheet-html-co-ban.html">
+      <div class="icon">📋</div>
+      <div>
+        <span class="tag t-cheat">Tra cứu nhanh</span>
+        <h2>Cheat Sheet HTML cơ bản</h2>
+        <p>Tất cả thẻ cần dùng gói trong 2 trang giấy: bộ khung file, chữ, danh sách, ảnh, bảng, form, lỗi hay gặp và checklist nộp bài. In ra để cạnh máy.</p>
+      </div>
+      <div class="go">→</div>
+    </a>
+
+  </div>
+
+  <div class="note">
+    <b>Mẹo xem trang mẫu:</b> nhấn chuột phải → <i>Xem nguồn trang</i> (hoặc <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>U</kbd>) để đọc toàn bộ code HTML đã tạo ra trang đó.
+  </div>
+
+  <footer>MindX · C4E · Buổi 1 — Chúc bạn code vui 🚀</footer>
+
 </div>
 
-<div class="deck">
-
-<!-- ======================= 1. KHỞI ĐỘNG ======================= -->
-
-<section class="slide slide--title" data-chapter="Khởi động">
-  <div class="inner">
-    <h1>Lập trình Web<br>cho người mới bắt đầu</h1>
-    <p class="sub">Buổi 1 — Làm quen với bộ ba <b>HTML</b>, <b>CSS</b> và <b>JavaScript</b>: ba thứ tạo nên mọi website bạn từng truy cập.</p>
-    <p class="meta">
-      Điều hướng: <kbd>→</kbd> slide sau · <kbd>←</kbd> slide trước · <kbd>O</kbd> xem mục lục · <kbd>F</kbd> toàn màn hình
-    </p>
-  </div>
-</section>
-
-<section class="slide" data-chapter="Khởi động">
-  <div class="inner">
-    <h2>Sau buổi học này bạn sẽ<span class="dot">.</span></h2>
-    <p class="lead">Không chỉ "biết về" mà thật sự tự tay làm ra một trang web chạy được.</p>
-    <div class="grid grid-2">
-      <div class="card card--html">
-        <div class="icon">🧱</div>
-        <h3>Hiểu website được tạo ra thế nào</h3>
-        <p>Trình duyệt, file HTML, và vì sao mọi trang web đều cần đủ 3 ngôn ngữ.</p>
-      </div>
-      <div class="card card--css">
-        <div class="icon">✍️</div>
-        <h3>Viết được HTML &amp; CSS</h3>
-        <p>Tự tạo tiêu đề, đoạn văn, ảnh, nút bấm rồi tô màu, canh chỉnh cho đẹp.</p>
-      </div>
-      <div class="card card--js">
-        <div class="icon">⚡</div>
-        <h3>Cho trang web biết "phản ứng"</h3>
-        <p>Dùng JavaScript để bấm nút là có chuyện xảy ra: đổi màu, hiện chữ, tính toán.</p>
-      </div>
-      <div class="card">
-        <div class="icon">🚀</div>
-        <h3>Hoàn thành 1 sản phẩm nhỏ</h3>
-        <p>Một trang "Thẻ giới thiệu bản thân" có tương tác, khoe được ngay với bạn bè.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="slide" data-chapter="Khởi động">
-  <div class="inner">
-    <h2>Chuyện gì xảy ra khi bạn gõ <span class="dot">facebook.com</span>?</h2>
-    <p class="lead">Website không "nằm sẵn" trong máy bạn — nó được tải về từ một máy tính khác.</p>
-    <div class="grid grid-4">
-      <div class="card"><div class="icon">1️⃣</div><h3>Bạn gõ địa chỉ</h3><p>Trình duyệt (Chrome, Safari…) gửi một yêu cầu đi.</p></div>
-      <div class="card"><div class="icon">2️⃣</div><h3>Máy chủ nhận</h3><p>Server ở đâu đó trên thế giới nghe thấy yêu cầu này.</p></div>
-      <div class="card"><div class="icon">3️⃣</div><h3>Server trả file</h3><p>Nó gửi lại các file: HTML, CSS, JS, hình ảnh…</p></div>
-      <div class="card"><div class="icon">4️⃣</div><h3>Trình duyệt vẽ ra</h3><p>Đọc code rồi "vẽ" thành trang web bạn nhìn thấy.</p></div>
-    </div>
-    <div class="note note--tip">
-      <b>Thử ngay:</b> mở một trang web bất kỳ, nhấn chuột phải → <i>Xem nguồn trang</i> (View Page Source) hoặc <kbd>F12</kbd>.
-      Tất cả những dòng chữ lạ mắt đó chính là thứ chúng ta sắp học viết.
-    </div>
-  </div>
-</section>
-
-<section class="slide" data-chapter="Khởi động">
-  <div class="inner">
-    <h2>Bộ ba HTML — CSS — JavaScript</h2>
-    <p class="lead">Ví một website như một <b>ngôi nhà</b> thì:</p>
-    <div class="grid grid-3">
-      <div class="card card--html">
-        <div class="icon">🏠</div>
-        <h3>HTML — Khung nhà</h3>
-        <p><b>Nội dung &amp; cấu trúc.</b> Đâu là tường, đâu là cửa, đâu là cầu thang. Không có HTML thì không có gì cả.</p>
-      </div>
-      <div class="card card--css">
-        <div class="icon">🎨</div>
-        <h3>CSS — Trang trí</h3>
-        <p><b>Hình thức.</b> Sơn màu gì, cửa sổ to hay nhỏ, đồ đạc kê ở đâu. Nhà không sơn vẫn ở được, nhưng xấu.</p>
-      </div>
-      <div class="card card--js">
-        <div class="icon">💡</div>
-        <h3>JavaScript — Điện &amp; thiết bị</h3>
-        <p><b>Hành vi.</b> Bấm công tắc thì đèn sáng, bấm chuông thì cửa mở. Đây là phần "biết phản ứng".</p>
-      </div>
-    </div>
-    <div class="note">
-      Thứ tự học cũng chính là thứ tự xây nhà: <b>HTML trước → CSS sau → JavaScript cuối</b>.
-    </div>
-  </div>
-</section>
-
-<section class="slide" data-chapter="Khởi động">
-  <div class="inner">
-    <h2>Cùng một nội dung, khác nhau ở đâu?</h2>
-    <p class="lead">Bên trái chỉ có HTML. Bên phải thêm CSS và JavaScript. Vẫn là một nội dung đó.</p>
-    <div class="grid grid-2">
-      <div class="example stack" data-run data-size="short">
-        <div class="codes">
-          <div class="codewrap"><div class="label">CHỈ HTML</div><pre><code data-lang="html">&lt;h2&gt;Nguyễn Văn An&lt;/h2&gt;
-&lt;p&gt;Học sinh lớp 8 · Yêu thích game&lt;/p&gt;
-&lt;button&gt;Kết bạn&lt;/button&gt;</code></pre></div>
-        </div>
-      </div>
-      <div class="example stack" data-run data-size="short">
-        <div class="codes">
-          <div class="codewrap"><div class="label">HTML + CSS + JS</div><pre><code data-lang="html">&lt;div class="card"&gt;
-  &lt;h2&gt;Nguyễn Văn An&lt;/h2&gt;
-  &lt;p&gt;Học sinh lớp 8 · Yêu thích game&lt;/p&gt;
-  &lt;button onclick="ketBan()"&gt;Kết bạn&lt;/button&gt;
-&lt;/div&gt;</code></pre></div>
-          <div class="codewrap"><div class="label">CSS</div><pre><code data-lang="css">.card { background: #ff6b35; color: white; padding: 18px;
-  border-radius: 14px; text-align: center; font-family: sans-serif; }
-button { background: white; color: #ff6b35; border: 0;
-  padding: 9px 20px; border-radius: 99px; cursor: pointer; font-weight: bold; }</code></pre></div>
-          <div class="codewrap"><div class="label">JS</div><pre><code data-lang="js">function ketBan() {
-  document.querySelector("button").innerText = "Đã gửi lời mời ✓";
-}</code></pre></div>
-        </div>
-      </div>
-    </div>
-    <div class="note note--tip"><b>Bấm thử nút "Kết bạn"</b> ở khung bên phải — đó là JavaScript đang làm việc.</div>
-  </div>
-</section>
-
-<section class="slide" data-chapter="Khởi động">
-  <div class="inner">
-    <h2>Chuẩn bị đồ nghề</h2>
-    <div class="grid grid-2">
-      <div class="card">
-        <h3>1. Trình soạn thảo code</h3>
-        <p><b>Visual Studio Code</b> (miễn phí, code.visualstudio.com). Cài thêm tiện ích <code class="inline">Live Server</code> để lưu file là trang tự tải lại.</p>
-      </div>
-      <div class="card">
-        <h3>2. Trình duyệt</h3>
-        <p><b>Google Chrome</b>. Nhấn <kbd>F12</kbd> mở DevTools — nơi xem lỗi và thử code trực tiếp.</p>
-      </div>
-      <div class="card">
-        <h3>3. Không cài được gì?</h3>
-        <p>Dùng công cụ online: <b>codepen.io</b>, <b>replit.com</b> hoặc <b>jsfiddle.net</b>. Mở là code được ngay.</p>
-      </div>
-      <div class="card">
-        <h3>4. Quy tắc đặt tên file</h3>
-        <p>Chữ thường, không dấu, không khoảng trắng: <code class="inline">index.html</code>, <code class="inline">style.css</code>, <code class="inline">script.js</code>.</p>
-      </div>
-    </div>
-    <div class="note note--warn">
-      <b>Lưu ý:</b> file trang chủ <u>bắt buộc</u> tên là <code class="inline">index.html</code> — đó là file trình duyệt tìm đầu tiên.
-    </div>
-  </div>
-</section>
-
-<!-- ======================= 2. HTML ======================= -->
-
-<section class="slide slide--section" data-chapter="HTML">
-  <div class="inner">
-    <div class="kicker">PHẦN 1</div>
-    <h1>HTML — Xây khung cho trang web</h1>
-    <p>HyperText Markup Language · Ngôn ngữ đánh dấu, không phải ngôn ngữ lập trình. Nhiệm vụ duy nhất: <b>mô tả nội dung là cái gì</b>.</p>
-  </div>
-</section>
-
-<section class="slide" data-chapter="HTML">
-  <div class="inner">
-    <h2>Thẻ (tag) — viên gạch của HTML</h2>
-    <p class="lead">Mỗi phần nội dung được "bọc" trong một cặp thẻ để nói cho trình duyệt biết nó là gì.</p>
-    <div class="grid grid-2">
-      <div class="codewrap">
-        <div class="label">CẤU TRÚC MỘT THẺ</div>
-<pre><code data-lang="html">&lt;p class="intro"&gt;Xin chào!&lt;/p&gt;
- │  │      │        │        │
- │  │      │        │        └─ Thẻ đóng
- │  │      │        └────────── Nội dung
- │  │      └─────────────────── Giá trị thuộc tính
- │  └────────────────────────── Tên thuộc tính
- └───────────────────────────── Tên thẻ (thẻ mở)</code></pre>
-      </div>
-      <div>
-        <h3>Ba điều cần nhớ</h3>
-        <ul>
-          <li>Thẻ mở <code class="inline">&lt;p&gt;</code> luôn đi với thẻ đóng <code class="inline">&lt;/p&gt;</code>.</li>
-          <li>Một vài thẻ <b>không có thẻ đóng</b> (thẻ rỗng): <code class="inline">&lt;br&gt;</code>, <code class="inline">&lt;hr&gt;</code>, <code class="inline">&lt;img&gt;</code>, <code class="inline">&lt;input&gt;</code>.</li>
-          <li>Thẻ có thể <b>lồng nhau</b>, nhưng phải đóng đúng thứ tự:<br>
-            ✅ <code class="inline">&lt;p&gt;&lt;b&gt;abc&lt;/b&gt;&lt;/p&gt;</code> &nbsp;
-            ❌ <code class="inline">&lt;p&gt;&lt;b&gt;abc&lt;/p&gt;&lt;/b&gt;</code></li>
-        </ul>
-        <div class="note note--warn"><b>Lỗi phổ biến nhất của người mới:</b> quên thẻ đóng. Trang sẽ hiển thị lộn xộn mà không báo lỗi gì cả.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="slide" data-chapter="HTML">
-  <div class="inner">
-    <h2>Bộ khung của mọi file HTML</h2>
-    <p class="lead">Gõ <code class="inline">!</code> rồi nhấn <kbd>Tab</kbd> trong VS Code sẽ tự sinh ra khung này.</p>
-    <div class="grid grid-2">
-      <div class="codewrap">
-        <div class="label">index.html</div>
-<pre><code data-lang="html">&lt;!DOCTYPE html&gt;
-&lt;html lang="vi"&gt;
-&lt;head&gt;
-  &lt;meta charset="UTF-8"&gt;
-  &lt;title&gt;Trang đầu tiên của tôi&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-  &lt;h1&gt;Xin chào thế giới!&lt;/h1&gt;
-  &lt;p&gt;Đây là trang web do tôi tự viết.&lt;/p&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
-      </div>
-      <div>
-        <table class="tbl">
-          <tr><th>Thành phần</th><th>Ý nghĩa</th></tr>
-          <tr><td><code>&lt;!DOCTYPE html&gt;</code></td><td>Báo đây là file HTML phiên bản 5 (mới nhất).</td></tr>
-          <tr><td><code>&lt;html lang="vi"&gt;</code></td><td>Bọc toàn bộ trang, ngôn ngữ tiếng Việt.</td></tr>
-          <tr><td><code>&lt;head&gt;</code></td><td>Thông tin <b>ẩn</b>: tiêu đề tab, bảng mã, liên kết CSS.</td></tr>
-          <tr><td><code>&lt;meta charset="UTF-8"&gt;</code></td><td><b>Bắt buộc</b> để tiếng Việt không bị lỗi font.</td></tr>
-          <tr><td><code>&lt;title&gt;</code></td><td>Chữ hiện trên tab trình duyệt.</td></tr>
-          <tr><td><code>&lt;body&gt;</code></td><td>Mọi thứ người dùng <b>nhìn thấy</b> nằm ở đây.</td></tr>
-        </table>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="slide" data-chapter="HTML">
-  <div class="inner">
-    <h2>Tiêu đề &amp; đoạn văn</h2>
-    <p class="lead">Có 6 cấp tiêu đề, từ <code class="inline">h1</code> (to nhất) đến <code class="inline">h6</code>. Mỗi trang chỉ nên có <b>một</b> thẻ <code class="inline">h1</code>.</p>
-    <div class="example" data-run>
-      <div class="codes">
-        <div class="codewrap"><div class="label">HTML</div><pre><code data-lang="html">&lt;h1&gt;Tiêu đề cấp 1&lt;/h1&gt;
-&lt;h2&gt;Tiêu đề cấp 2&lt;/h2&gt;
-&lt;h3&gt;Tiêu đề cấp 3&lt;/h3&gt;
-
-&lt;p&gt;Đây là một đoạn văn bình thường. Dù bạn
-   xuống dòng trong code, trình duyệt vẫn gộp
-   lại thành một dòng liền mạch.&lt;/p&gt;
-
-&lt;p&gt;Muốn xuống dòng thật &lt;br&gt; thì dùng thẻ br.&lt;/p&gt;
-
-&lt;hr&gt;
-&lt;p&gt;Thẻ hr vẽ một đường kẻ ngang.&lt;/p&gt;</code></pre></div>
-      </div>
-    </div>
-    <div class="note"><b>Quan trọng:</b> đừng dùng <code class="inline">h1</code> chỉ vì muốn chữ to — hãy dùng đúng cấp bậc nội dung, việc phóng to là nhiệm vụ của CSS.</div>
-  </div>
-</section>
-
-<section class="slide" data-chapter="HTML">
-  <div class="inner">
-    <h2>Định dạng chữ</h2>
-    <div class="example" data-run>
-      <div class="codes">
-        <div class="codewrap"><div class="label">HTML</div><pre><code data-lang="html">&lt;p&gt;Chữ &lt;b&gt;in đậm&lt;/b&gt; và &lt;strong&gt;rất quan trọng&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Chữ &lt;i&gt;in nghiêng&lt;/i&gt; và &lt;em&gt;nhấn mạnh&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Chữ &lt;u&gt;gạch chân&lt;/u&gt;, &lt;s&gt;gạch ngang&lt;/s&gt;, &lt;mark&gt;bôi vàng&lt;/mark&gt;&lt;/p&gt;
-&lt;p&gt;Công thức: H&lt;sub&gt;2&lt;/sub&gt;O và 2&lt;sup&gt;10&lt;/sup&gt; = 1024&lt;/p&gt;
-&lt;p&gt;Trích dẫn: &lt;q&gt;Học lập trình rất vui&lt;/q&gt;&lt;/p&gt;
-&lt;p&gt;Đoạn code: &lt;code&gt;console.log("hi")&lt;/code&gt;&lt;/p&gt;
-&lt;small&gt;Chữ nhỏ dùng cho ghi chú.&lt;/small&gt;</code></pre></div>
-      </div>
-    </div>
-    <div class="note note--tip">
-      <b>b vs strong?</b> Nhìn giống hệt nhau, nhưng <code class="inline">strong</code> mang ý nghĩa "nội dung này quan trọng" — giúp Google và phần mềm đọc màn hình cho người khiếm thị hiểu đúng. Ưu tiên <code class="inline">strong</code> và <code class="inline">em</code>.
-    </div>
-  </div>
-</section>
-
-<section class="slide" data-chapter="HTML">
-  <div class="inner">
-    <h2>Danh sách</h2>
-    <div class="example" data-run>
-      <div class="codes">
-        <div class="codewrap"><div class="label">HTML</div><pre><code data-lang="html">&lt;h3&gt;Danh sách không thứ tự (ul)&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Bút chì&lt;/li&gt;
-  &lt;li&gt;Tẩy&lt;/li&gt;
-  &lt;li&gt;Vở ô ly&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3&gt;Danh sách có thứ tự (ol)&lt;/h3&gt;
-&lt;ol&gt;
-  &lt;li&gt;Mở VS Code&lt;/li&gt;
-  &lt;li&gt;Tạo file index.html&lt;/li&gt;
-  &lt;li&gt;Viết code&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3&gt;Danh sách lồng nhau&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Môn học
-    &lt;ul&gt;
-      &lt;li&gt;Toán&lt;/li&gt;
-      &lt;li&gt;Lập trình&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</code></pre></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="slide" data-chapter="HTML">
-  <div class="inner">
-    <h2>Liên kết &amp; hình ảnh</h2>
-    <p class="lead">Hai thẻ làm nên "web": <code class="inline">&lt;a&gt;</code> nối các trang với nhau, <code class="inline">&lt;img&gt;</code> mang hình ảnh vào trang.</p>
-    <div class="example" data-run>
-      <div class="codes">
-        <div class="codewrap"><div class="label">HTML</div><pre><code data-lang="html">&lt;!-- Liên kết ra trang khác, mở ở tab mới --&gt;
-&lt;a href="https://mindx.edu.vn" target="_blank"&gt;Trang MindX&lt;/a&gt;
-
-&lt;!-- Liên kết tới file khác trong cùng thư mục --&gt;
-&lt;a href="lienhe.html"&gt;Trang liên hệ&lt;/a&gt;
-
-&lt;!-- Gọi điện / gửi mail --&gt;
-&lt;a href="mailto:hocsinh@mindx.vn"&gt;Gửi email&lt;/a&gt;
-
-&lt;!-- Hình ảnh: src = đường dẫn, alt = mô tả khi ảnh lỗi --&gt;
-&lt;img src="https://picsum.photos/200/120"
-     alt="Ảnh minh hoạ" width="200"&gt;
-
-&lt;!-- Ảnh bọc trong link: bấm vào ảnh để chuyển trang --&gt;
-&lt;a href="https://mindx.edu.vn"&gt;
-  &lt;img src="https://picsum.photos/120/80" alt="Bấm vào tôi"&gt;
-&lt;/a&gt;</code></pre></div>
-      </div>
-    </div>
-    <div class="note note--warn"><b>Thuộc tính <code class="inline">alt</code> là bắt buộc:</b> khi ảnh không tải được, người dùng vẫn biết đó là ảnh gì; người khiếm thị cũng nghe được mô tả này.</div>
-  </div>
-</section>
-
-<section class="slide" data-chapter="HTML">
-  <div class="inner">
-    <h2>Bảng dữ liệu</h2>
-    <div class="example" data-run>
-      <div class="codes">
-        <div class="codewrap"><div class="label">HTML</div><pre><code data-lang="html">&lt;table border="1" cellpadding="8"&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Môn&lt;/th&gt;
-      &lt;th&gt;Điểm&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Toán&lt;/td&gt;
-      &lt;td&gt;9.0&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Lập trình&lt;/td&gt;
-      &lt;td&gt;10&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;</code></pre></div>
-      </div>
-    </div>
-    <div class="note">
-      <code class="inline">tr</code> = một hàng · <code class="inline">th</code> = ô tiêu đề (tự in đậm) · <code class="inline">td</code> = ô dữ liệu.
-      Chỉ dùng bảng cho <b>dữ liệu dạng bảng</b>, đừng dùng bảng để dàn trang — việc đó là của CSS.
-    </div>
-  </div>
-</section>
-
-<section class="slide" data-chapter="HTML">
-  <div class="inner">
-    <h2>Thẻ gom nhóm &amp; thẻ ngữ nghĩa</h2>
-    <div class="grid grid-2">
-      <div>
-        <h3>div &amp; span — hai thẻ "vô hình"</h3>
-        <ul>
-          <li><code class="inline">&lt;div&gt;</code>: cái hộp, chiếm trọn chiều ngang, dùng để gom nhóm các phần lớn.</li>
-          <li><code class="inline">&lt;span&gt;</code>: bọc một mẩu chữ nhỏ nằm trong dòng.</li>
-        </ul>
-        <p class="lead">Chúng không có hình dạng gì cả — nhưng là "tay cầm" để CSS và JS bám vào.</p>
-        <h3>Thẻ ngữ nghĩa (semantic)</h3>
-        <p class="lead">Thay vì <code class="inline">div</code> cho mọi thứ, HTML5 cho ta những thẻ có tên nói lên vai trò:</p>
-        <span class="pill pill--html">header</span><span class="pill pill--html">nav</span><span class="pill pill--html">main</span>
-        <span class="pill pill--html">section</span><span class="pill pill--html">article</span><span class="pill pill--html">aside</span><span class="pill pill--html">footer</span>
-      </div>
-      <div class="example stack" data-run data-size="tall">
-        <div class="codes">
-          <div class="codewrap"><div class="label">HTML</div><pre><code data-lang="html">&lt;header&gt;
-  &lt;h2&gt;Blog của An&lt;/h2&gt;
-  &lt;nav&gt;
-    &lt;a href="#"&gt;Trang chủ&lt;/a&gt; |
-    &lt;a href="#"&gt;Giới thiệu&lt;/a&gt;
-  &lt;/nav&gt;
-&lt;/header&gt;
-
-&lt;main&gt;
-  &lt;article&gt;
-    &lt;h3&gt;Bài viết đầu tiên&lt;/h3&gt;
-    &lt;p&gt;Hôm nay tôi học &lt;span class="hot"&gt;HTML&lt;/span&gt;.&lt;/p&gt;
-  &lt;/article&gt;
-&lt;/main&gt;
-
-&lt;footer&gt;© 2026 - An&lt;/footer&gt;</code></pre></div>
-          <div class="codewrap"><div class="label">CSS</div><pre><code data-lang="css">header { background: #ff6b35; color: #fff; padding: 10px; }
-header a { color: #fff; }
-main { padding: 10px 0; }
-.hot { color: #e63946; font-weight: bold; }
-footer { border-top: 1px solid #ccc; color: #888; font-size: 13px; padding-top: 8px; }</code></pre></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="slide" data-chapter="HTML">
-  <div class="inner">
-    <h2>Biểu mẫu (form) — nơi người dùng nhập liệu</h2>
-    <div class="example" data-run data-size="tall">
-      <div class="codes">
-        <div class="codewrap"><div class="label">HTML</div><pre><code data-lang="html">&lt;h3&gt;Đăng ký khoá học&lt;/h3&gt;
-
-&lt;label&gt;Họ tên:&lt;/label&gt;&lt;br&gt;
-&lt;input type="text" placeholder="Nhập tên của bạn"&gt;&lt;br&gt;&lt;br&gt;
-
-&lt;label&gt;Email:&lt;/label&gt;&lt;br&gt;
-&lt;input type="email" placeholder="ban@email.com"&gt;&lt;br&gt;&lt;br&gt;
-
-&lt;label&gt;Tuổi:&lt;/label&gt;&lt;br&gt;
-&lt;input type="number" min="6" max="18" value="12"&gt;&lt;br&gt;&lt;br&gt;
-
-&lt;label&gt;Chọn lớp:&lt;/label&gt;
-&lt;select&gt;
-  &lt;option&gt;Web cơ bản&lt;/option&gt;
-  &lt;option&gt;Python&lt;/option&gt;
-&lt;/select&gt;&lt;br&gt;&lt;br&gt;
-
-&lt;input type="checkbox" id="dk"&gt;
-&lt;label for="dk"&gt;Tôi đồng ý&lt;/label&gt;&lt;br&gt;&lt;br&gt;
-
-&lt;button&gt;Gửi đăng ký&lt;/button&gt;</code></pre></div>
-      </div>
-    </div>
-    <div class="note note--tip">Các kiểu <code class="inline">input</code> hay dùng: <code class="inline">text</code>, <code class="inline">password</code>, <code class="inline">email</code>, <code class="inline">number</code>, <code class="inline">date</code>, <code class="inline">color</code>, <code class="inline">range</code>, <code class="inline">checkbox</code>, <code class="inline">radio</code>, <code class="inline">file</code>.</div>
-  </div>
-</section>
-
-<section class="slide" data-chapter="HTML">
-  <div class="inner">
-    <h2>🛠️ Thực hành 1 — Trang giới thiệu bản thân</h2>
-    <div class="grid grid-2">
-      <div class="task">
-        <h3>Yêu cầu (10 phút)</h3>
-        <ol>
-          <li>Tạo file <code class="inline">index.html</code> với bộ khung chuẩn.</li>
-          <li>Thẻ <code class="inline">h1</code>: tên của bạn.</li>
-          <li>Một ảnh đại diện bằng <code class="inline">img</code> (dùng <code class="inline">https://picsum.photos/200</code> nếu chưa có ảnh).</li>
-          <li>Một đoạn <code class="inline">p</code> giới thiệu 2–3 câu về bản thân.</li>
-          <li>Một danh sách <code class="inline">ul</code>: 3 sở thích.</li>
-          <li>Một bảng <code class="inline">table</code>: 3 môn học yêu thích và điểm số.</li>
-          <li>Một liên kết <code class="inline">a</code> tới trang web bạn thích.</li>
-        </ol>
-      </div>
-      <div>
-        <h3>Gợi ý khi bị kẹt</h3>
-        <ul>
-          <li>Chưa hiện gì? Kiểm tra đã lưu file (<kbd>Ctrl</kbd>+<kbd>S</kbd>) và mở đúng file chưa.</li>
-          <li>Tiếng Việt bị lỗi ô vuông? Thiếu <code class="inline">&lt;meta charset="UTF-8"&gt;</code>.</li>
-          <li>Ảnh không hiện? Sai đường dẫn <code class="inline">src</code> — thử copy link ảnh từ trình duyệt.</li>
-          <li>Chữ dính liền kỳ lạ? Có thể quên một thẻ đóng ở phía trên.</li>
-        </ul>
-        <div class="note note--tip"><b>Mẹo:</b> viết xong mỗi phần thì lưu và F5 xem kết quả ngay, đừng viết một mạch 50 dòng rồi mới chạy.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ======================= 3. CSS ======================= -->
-
-<section class="slide slide--section" data-chapter="CSS">
-  <div class="inner">
-    <div class="kicker">PHẦN 2</div>
-    <h1>CSS — Khoác áo đẹp cho trang web</h1>
-    <p>Cascading Style Sheets · Quyết định <b>mọi thứ trông như thế nào</b>: màu sắc, phông chữ, kích thước, vị trí, hiệu ứng.</p>
-  </div>
-</section>
-
-<section class="slide" data-chapter="CSS">
-  <div class="inner">
-    <h2>3 cách đưa CSS vào trang</h2>
-    <div class="grid grid-3">
-      <div class="card">
-        <h3>1. Inline — trong thẻ</h3>
-        <div class="codewrap"><pre><code data-lang="html">&lt;p style="color: red"&gt;Chữ đỏ&lt;/p&gt;</code></pre></div>
-        <p style="margin-top:10px">Nhanh nhưng rối, chỉ dùng để thử nhanh.</p>
-      </div>
-      <div class="card">
-        <h3>2. Internal — trong &lt;head&gt;</h3>
-        <div class="codewrap"><pre><code data-lang="html">&lt;head&gt;
-  &lt;style&gt;
-    p { color: red; }
-  &lt;/style&gt;
-&lt;/head&gt;</code></pre></div>
-        <p style="margin-top:10px">Tiện khi làm bài tập nhỏ, một file duy nhất.</p>
-      </div>
-      <div class="card card--css">
-        <h3>3. External — file riêng ⭐</h3>
-        <div class="codewrap"><pre><code data-lang="html">&lt;head&gt;
-  &lt;link rel="stylesheet"
-        href="style.css"&gt;
-&lt;/head&gt;</code></pre></div>
-        <p style="margin-top:10px"><b>Cách chuyên nghiệp.</b> Một file CSS dùng chung cho nhiều trang HTML.</p>
-      </div>
-    </div>
-    <div class="note note--warn">Nếu cùng một thuộc tính bị khai báo nhiều nơi: <b>inline thắng internal, internal/external cái nào viết sau thì thắng</b>. Đó là chữ "Cascading" — đổ tầng.</div>
-  </div>
-</section>
-
-<section class="slide" data-chapter="CSS">
-  <div class="inner">
-    <h2>Cú pháp CSS</h2>
-    <div class="grid grid-2">
-      <div class="codewrap">
-        <div class="label">CẤU TRÚC MỘT QUY TẮC</div>
-<pre><code data-lang="css">h1 {
-  color: orange;
-  font-size: 32px;
-}
-│   │      │
-│   │      └── Giá trị (value)
-│   └───────── Thuộc tính (property)
-└───────────── Bộ chọn (selector): áp dụng cho ai</code></pre>
-      </div>
-      <div>
-        <h3>Ba dấu phải nhớ</h3>
-        <ul>
-          <li><code class="inline">{ }</code> bọc toàn bộ khai báo.</li>
-          <li><code class="inline">:</code> ngăn giữa thuộc tính và giá trị.</li>
-          <li><code class="inline">;</code> kết thúc <b>mỗi</b> dòng khai báo.</li>
-        </ul>
-        <div class="note note--warn"><b>Quên dấu <code class="inline">;</code></b> là lỗi số 1 khi học CSS: dòng đó và thường cả dòng sau sẽ không có tác dụng, mà trình duyệt <u>không báo lỗi</u>.</div>
-        <h3>Ghi chú trong CSS</h3>
-        <div class="codewrap"><pre><code data-lang="css">/* Đây là ghi chú, trình duyệt bỏ qua */</code></pre></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="slide" data-chapter="CSS">
-  <div class="inner">
-    <h2>Bộ chọn (selector) — chọn đúng thứ cần tô</h2>
-    <div class="example" data-run data-size="tall">
-      <div class="codes">
-        <div class="codewrap"><div class="label">HTML</div><pre><code data-lang="html">&lt;h2&gt;Chọn theo tên thẻ&lt;/h2&gt;
-&lt;p&gt;Đoạn văn thường&lt;/p&gt;
-&lt;p class="noibat"&gt;Đoạn văn có class&lt;/p&gt;
-&lt;p class="noibat"&gt;Class dùng lại được nhiều lần&lt;/p&gt;
-&lt;p id="dacbiet"&gt;Đoạn văn có id (duy nhất)&lt;/p&gt;
-&lt;div&gt;&lt;p&gt;Đoạn văn nằm trong div&lt;/p&gt;&lt;/div&gt;</code></pre></div>
-        <div class="codewrap"><div class="label">CSS</div><pre><code data-lang="css">/* Tên thẻ: mọi thẻ p */
-p { color: #555; }
-
-/* .class - dùng cho NHIỀU phần tử */
-.noibat { color: #ff6b35; font-weight: bold; }
-
-/* #id - CHỈ MỘT phần tử duy nhất trên trang */
-#dacbiet { background: #ffe8d6; padding: 6px; }
-
-/* Con cháu: thẻ p nằm bên trong div */
-div p { border-left: 4px solid #4cc9f0; padding-left: 8px; }
-
-/* Nhiều selector cùng lúc */
-h2, .noibat { font-family: Georgia, serif; }</code></pre></div>
-      </div>
-    </div>
-    <div class="note"><b>Khi nào dùng class, khi nào dùng id?</b> Gần như luôn dùng <code class="inline">class</code>. <code class="inline">id</code> chỉ dành cho thứ duy nhất trên trang (và hay dùng cho JavaScript).</div>
-  </div>
-</section>
-
-<section class="slide" data-chapter="CSS">
-  <div class="inner">
-    <h2>Màu sắc &amp; nền</h2>
-    <div class="example" data-run data-size="tall">
-      <div class="codes">
-        <div class="codewrap"><div class="label">HTML</div><pre><code data-lang="html">&lt;p class="c1"&gt;Màu theo tên: tomato&lt;/p&gt;
-&lt;p class="c2"&gt;Màu HEX: #4cc9f0&lt;/p&gt;
-&lt;p class="c3"&gt;Màu RGB: rgb(61, 220, 151)&lt;/p&gt;
-&lt;p class="c4"&gt;Nền mờ: rgba(255,0,0,0.15)&lt;/p&gt;
-&lt;div class="gradient"&gt;Nền chuyển sắc (gradient)&lt;/div&gt;</code></pre></div>
-        <div class="codewrap"><div class="label">CSS</div><pre><code data-lang="css">.c1 { color: tomato; }
-.c2 { color: #4cc9f0; }
-.c3 { color: rgb(61, 220, 151); }
-.c4 { background-color: rgba(255, 0, 0, 0.15); padding: 6px; }
-
-.gradient {
-  background: linear-gradient(90deg, #ff6b35, #ffd166);
-  color: white;
-  padding: 16px;
-  border-radius: 10px;
-  text-align: center;
-  font-weight: bold;
-}</code></pre></div>
-      </div>
-    </div>
-    <div class="note note--tip"><b>Mã HEX đọc thế nào?</b> <code class="inline">#RRGGBB</code> — hai ký tự đỏ, hai ký tự xanh lá, hai ký tự xanh dương, từ <code class="inline">00</code> (không có) đến <code class="inline">ff</code> (tối đa). Lấy mã màu nhanh tại <b>coolors.co</b> hoặc bảng màu trong VS Code.</div>
-  </div>
-</section>
-
-<section class="slide" data-chapter="CSS">
-  <div class="inner">
-    <h2>Chữ &amp; phông chữ</h2>
-    <div class="example" data-run data-size="tall">
-      <div class="codes">
-        <div class="codewrap"><div class="label">HTML</div><pre><code data-lang="html">&lt;h3 class="tieude"&gt;Tiêu đề được canh giữa&lt;/h3&gt;
-&lt;p class="doan"&gt;Đoạn văn này được chỉnh cỡ chữ, khoảng cách dòng,
-giãn chữ và đổi phông chữ cho dễ đọc hơn hẳn.&lt;/p&gt;
-&lt;p class="hoa"&gt;viết hoa toàn bộ&lt;/p&gt;</code></pre></div>
-        <div class="codewrap"><div class="label">CSS</div><pre><code data-lang="css">.tieude {
-  text-align: center;        /* left | center | right */
-  color: #ff6b35;
-  text-decoration: underline;
-}
-.doan {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 17px;           /* px | em | rem | % */
-  line-height: 1.8;          /* khoảng cách giữa các dòng */
-  letter-spacing: 0.5px;     /* giãn chữ */
-  font-style: italic;
-}
-.hoa {
-  text-transform: uppercase; /* uppercase | lowercase | capitalize */
-  font-weight: bold;
-  letter-spacing: 2px;
-}</code></pre></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="slide" data-chapter="CSS">
-  <div class="inner">
-    <h2>Box model — mọi thứ đều là cái hộp</h2>
-    <p class="lead">Đây là khái niệm <b>quan trọng nhất</b> của CSS. Mỗi phần tử gồm 4 lớp bao quanh nhau.</p>
-    <div class="grid grid-2">
-      <div class="boxmodel">
-        <div class="bm-margin">margin — khoảng cách với hộp khác
-          <div class="bm-border">border — viền
-            <div class="bm-padding">padding — đệm bên trong
-              <div class="bm-content">content — nội dung</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <table class="tbl">
-          <tr><th>Lớp</th><th>Là gì</th></tr>
-          <tr><td><code>content</code></td><td>Chữ hoặc ảnh thật sự bên trong.</td></tr>
-          <tr><td><code>padding</code></td><td>Đệm giữa nội dung và viền. Làm nội dung "thở".</td></tr>
-          <tr><td><code>border</code></td><td>Đường viền bao quanh.</td></tr>
-          <tr><td><code>margin</code></td><td>Khoảng trống <b>bên ngoài</b>, đẩy các hộp ra xa nhau.</td></tr>
-        </table>
-        <div class="note note--tip">Mẹo phân biệt: <b>padding</b> làm hộp <u>phình to</u>, <b>margin</b> làm hộp <u>đứng xa</u> hộp khác.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="slide" data-chapter="CSS">
-  <div class="inner">
-    <h2>Box model trong thực tế</h2>
-    <div class="example" data-run data-size="tall">
-      <div class="codes">
-        <div class="codewrap"><div class="label">HTML</div><pre><code data-lang="html">&lt;div class="hop tho"&gt;Không padding, không margin&lt;/div&gt;
-&lt;div class="hop dep"&gt;Có padding + margin + border + bo góc&lt;/div&gt;</code></pre></div>
-        <div class="codewrap"><div class="label">CSS</div><pre><code data-lang="css">.hop { background: #dff6ff; border: 2px solid #4cc9f0; }
-
-.tho { padding: 0; margin: 0; }
-
-.dep {
-  padding: 16px;            /* 4 cạnh đều 16px */
-  margin: 20px 0;           /* trên-dưới 20px, trái-phải 0 */
-  border: 3px dashed #ff6b35;
-  border-radius: 12px;      /* bo góc */
-  box-shadow: 0 6px 16px rgba(0, 0, 0, .15);
-  width: 300px;
-}
-
-/* Viết riêng từng cạnh khi cần */
-/* padding: 10px 20px 10px 20px  =>  trên phải dưới trái */</code></pre></div>
-      </div>
-    </div>
-    <div class="note"><b>Mẹo vàng:</b> thêm <code class="inline">* { box-sizing: border-box; }</code> ở đầu file CSS — khi đó <code class="inline">width</code> đã bao gồm padding và border, tính toán dễ hơn rất nhiều.</div>
-  </div>
-</section>
-
-<section class="slide" data-chapter="CSS">
-  <div class="inner">
-    <h2>Sắp xếp với Flexbox</h2>
-    <p class="lead">Cách hiện đại và dễ nhất để xếp các phần tử thành hàng/cột, canh giữa mọi thứ.</p>
-    <div class="example" data-run data-size="tall">
-      <div class="codes">
-        <div class="codewrap"><div class="label">HTML</div><pre><code data-lang="html">&lt;div class="hang"&gt;
-  &lt;div class="o"&gt;1&lt;/div&gt;
-  &lt;div class="o"&gt;2&lt;/div&gt;
-  &lt;div class="o"&gt;3&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class="giua"&gt;Căn giữa hoàn hảo&lt;/div&gt;</code></pre></div>
-        <div class="codewrap"><div class="label">CSS</div><pre><code data-lang="css">.hang {
-  display: flex;                  /* bật chế độ flex */
-  gap: 12px;                      /* khoảng cách giữa các ô */
-  justify-content: space-between; /* dàn theo chiều ngang */
-}
-.o {
-  flex: 1;                        /* chia đều chiều rộng */
-  background: #ff6b35; color: #fff;
-  padding: 18px; text-align: center; border-radius: 8px;
-}
-.giua {
-  display: flex;
-  justify-content: center;  /* căn giữa ngang */
-  align-items: center;      /* căn giữa dọc */
-  height: 90px;
-  margin-top: 14px;
-  background: #4cc9f0; color: #fff; border-radius: 8px;
-}</code></pre></div>
-      </div>
-    </div>
-    <div class="note note--tip">Nhớ 3 dòng này là làm được 80% bố cục: <code class="inline">display:flex</code> · <code class="inline">justify-content</code> (ngang) · <code class="inline">align-items</code> (dọc).</div>
-  </div>
-</section>
-
-<section class="slide" data-chapter="CSS">
-  <div class="inner">
-    <h2>Hiệu ứng: hover &amp; transition</h2>
-    <p class="lead">Trang web "sống động" hơn hẳn chỉ với vài dòng — di chuột vào các ô bên dưới để thử.</p>
-    <div class="example" data-run>
-      <div class="codes">
-        <div class="codewrap"><div class="label">HTML</div><pre><code data-lang="html">&lt;button class="btn"&gt;Di chuột vào tôi&lt;/button&gt;
-&lt;div class="the"&gt;Thẻ này cũng biết nhúc nhích&lt;/div&gt;</code></pre></div>
-        <div class="codewrap"><div class="label">CSS</div><pre><code data-lang="css">.btn {
-  background: #ff6b35; color: #fff; border: 0;
-  padding: 12px 26px; border-radius: 99px;
-  font-size: 15px; cursor: pointer;
-  transition: all 0.3s;      /* chuyển động mượt trong 0.3 giây */
-}
-.btn:hover {                 /* trạng thái khi di chuột vào */
-  background: #e63946;
-  transform: scale(1.1);     /* phóng to 110% */
-}
-
-.the {
-  margin-top: 16px; padding: 18px;
-  background: #f1f3f8; border-radius: 10px;
-  transition: 0.3s;
-}
-.the:hover {
-  background: #4cc9f0; color: #fff;
-  transform: translateY(-6px);  /* nhấc lên 6px */
-  box-shadow: 0 10px 20px rgba(0,0,0,.2);
-}</code></pre></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="slide" data-chapter="CSS">
-  <div class="inner">
-    <h2>🛠️ Thực hành 2 — Tô màu cho trang của bạn</h2>
-    <div class="grid grid-2">
-      <div class="task">
-        <h3>Yêu cầu (10 phút)</h3>
-        <ol>
-          <li>Tạo file <code class="inline">style.css</code> và liên kết vào HTML bằng thẻ <code class="inline">link</code>.</li>
-          <li>Đổi màu nền trang và phông chữ toàn trang (dùng selector <code class="inline">body</code>).</li>
-          <li>Cho tiêu đề <code class="inline">h1</code> một màu nổi bật và canh giữa.</li>
-          <li>Bo tròn ảnh đại diện: <code class="inline">border-radius: 50%</code>.</li>
-          <li>Bọc nội dung trong <code class="inline">&lt;div class="container"&gt;</code> rồi cho nó <code class="inline">max-width: 700px; margin: 0 auto;</code>.</li>
-          <li>Thêm hiệu ứng <code class="inline">:hover</code> cho liên kết.</li>
-        </ol>
-      </div>
-      <div>
-        <h3>Thử thách thêm ⭐</h3>
-        <ul>
-          <li>Dùng Flexbox xếp 3 sở thích thành 3 cột ngang hàng.</li>
-          <li>Thêm <code class="inline">box-shadow</code> cho khối nội dung để trông như một tấm thẻ nổi.</li>
-          <li>Tìm một phông chữ đẹp trên <b>fonts.google.com</b> và nhúng vào trang.</li>
-        </ul>
-        <div class="note note--tip"><b>Debug CSS:</b> nhấn <kbd>F12</kbd> → chọn thẻ mũi tên → bấm vào phần tử bất kỳ để xem nó đang nhận những CSS nào, và sửa thử trực tiếp.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ======================= 4. JAVASCRIPT ======================= -->
-
-<section class="slide slide--section" data-chapter="JavaScript">
-  <div class="inner">
-    <div class="kicker">PHẦN 3</div>
-    <h1>JavaScript — Cho trang web biết suy nghĩ</h1>
-    <p>Đây mới là <b>ngôn ngữ lập trình</b> thật sự: có biến, có điều kiện, có vòng lặp. Nó khiến trang web phản ứng lại với người dùng.</p>
-  </div>
-</section>
-
-<section class="slide" data-chapter="JavaScript">
-  <div class="inner">
-    <h2>JavaScript làm được gì?</h2>
-    <div class="grid grid-4">
-      <div class="card"><div class="icon">🖱️</div><h3>Phản ứng</h3><p>Bấm nút, gõ phím, cuộn chuột → trang làm gì đó.</p></div>
-      <div class="card"><div class="icon">🔄</div><h3>Thay đổi trang</h3><p>Đổi chữ, đổi màu, ẩn/hiện, thêm phần tử mới.</p></div>
-      <div class="card"><div class="icon">🧮</div><h3>Tính toán</h3><p>Máy tính, tính điểm, kiểm tra mật khẩu hợp lệ.</p></div>
-      <div class="card"><div class="icon">🌐</div><h3>Lấy dữ liệu</h3><p>Tải thời tiết, tin tức… từ server mà không tải lại trang.</p></div>
-    </div>
-    <h3 style="margin-top:22px">Nhúng JavaScript vào trang</h3>
-    <div class="grid grid-2">
-      <div class="codewrap"><div class="label">CÁCH 1 — VIẾT THẲNG TRONG HTML</div><pre><code data-lang="html">&lt;body&gt;
-  &lt;h1&gt;Trang của tôi&lt;/h1&gt;
-
-  &lt;!-- Đặt script ở CUỐI body --&gt;
-  &lt;script&gt;
-    console.log("Xin chào!");
-  &lt;/script&gt;
-&lt;/body&gt;</code></pre></div>
-      <div class="codewrap"><div class="label">CÁCH 2 — FILE RIÊNG (NÊN DÙNG)</div><pre><code data-lang="html">&lt;body&gt;
-  &lt;h1&gt;Trang của tôi&lt;/h1&gt;
-
-  &lt;script src="script.js"&gt;&lt;/script&gt;
-&lt;/body&gt;</code></pre></div>
-    </div>
-    <div class="note note--warn">Luôn đặt thẻ <code class="inline">&lt;script&gt;</code> ở <b>cuối</b> <code class="inline">&lt;body&gt;</code>. Nếu đặt trên <code class="inline">&lt;head&gt;</code>, JS chạy khi HTML chưa vẽ xong → không tìm thấy phần tử nào cả.</div>
-  </div>
-</section>
-
-<section class="slide" data-chapter="JavaScript">
-  <div class="inner">
-    <h2>console.log — người bạn thân nhất</h2>
-    <p class="lead">In ra bảng điều khiển (Console) để xem code đang chạy tới đâu, giá trị đang là bao nhiêu.</p>
-    <div class="grid grid-2">
-      <div class="codewrap"><div class="label">script.js</div><pre><code data-lang="js">console.log("Xin chào MindX!");
-console.log(2 + 3);
-console.log("Tổng là:", 2 + 3);
-
-let ten = "An";
-console.log("Chào " + ten);</code></pre></div>
-      <div>
-        <h3>Xem kết quả ở đâu?</h3>
-        <ol>
-          <li>Mở trang web trong Chrome.</li>
-          <li>Nhấn <kbd>F12</kbd> (hoặc chuột phải → Inspect).</li>
-          <li>Chọn tab <b>Console</b>.</li>
-        </ol>
-        <div class="note note--tip"><b>Console cũng là lời nhắc lỗi:</b> khi code sai, dòng chữ đỏ ở đây cho biết sai ở file nào, dòng bao nhiêu. Luôn mở Console khi lập trình!</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="slide" data-chapter="JavaScript">
-  <div class="inner">
-    <h2>Biến &amp; kiểu dữ liệu</h2>
-    <p class="lead">Biến là cái hộp có dán nhãn, dùng để cất giữ dữ liệu và lấy ra dùng lại.</p>
-    <div class="example" data-run data-size="tall">
-      <div class="codes">
-        <div class="codewrap"><div class="label">HTML</div><pre><code data-lang="html">&lt;div id="ketqua"&gt;&lt;/div&gt;</code></pre></div>
-        <div class="codewrap"><div class="label">JS</div><pre><code data-lang="js">// let: giá trị CÓ THỂ thay đổi
-let ten = "Nguyễn Văn An";   // chuỗi (string)
-let tuoi = 14;                // số (number)
-let diHoc = true;             // đúng/sai (boolean)
-let soThich = ["game", "vẽ", "code"];  // mảng (array)
-
-// const: hằng số, KHÔNG được đổi
-const TRUONG = "MindX";
-
-tuoi = tuoi + 1;   // hợp lệ vì dùng let
-
-document.getElementById("ketqua").innerHTML =
-  "Tên: " + ten + "&lt;br&gt;" +
-  "Tuổi sang năm: " + tuoi + "&lt;br&gt;" +
-  "Trường: " + TRUONG + "&lt;br&gt;" +
-  "Sở thích: " + soThich.join(", ") + "&lt;br&gt;" +
-  "Đang đi học? " + diHoc;</code></pre></div>
-      </div>
-    </div>
-    <div class="note">Quy tắc đặt tên biến: không dấu, không khoảng trắng, không bắt đầu bằng số. Dùng kiểu <code class="inline">camelCase</code>: <code class="inline">hoTen</code>, <code class="inline">diemTrungBinh</code>.</div>
-  </div>
-</section>
-
-<section class="slide" data-chapter="JavaScript">
-  <div class="inner">
-    <h2>Toán tử &amp; hội thoại với người dùng</h2>
-    <div class="grid grid-2">
-      <div>
-        <table class="tbl">
-          <tr><th>Toán tử</th><th>Ý nghĩa</th><th>Ví dụ</th></tr>
-          <tr><td><code>+ - * /</code></td><td>Cộng trừ nhân chia</td><td><code>7 / 2 = 3.5</code></td></tr>
-          <tr><td><code>%</code></td><td>Chia lấy dư</td><td><code>7 % 2 = 1</code></td></tr>
-          <tr><td><code>+</code></td><td>Nối chuỗi</td><td><code>"a" + "b" = "ab"</code></td></tr>
-          <tr><td><code>=== !==</code></td><td>Bằng / khác</td><td><code>5 === 5</code> → true</td></tr>
-          <tr><td><code>&gt; &lt; &gt;= &lt;=</code></td><td>So sánh</td><td><code>8 &gt; 5</code> → true</td></tr>
-          <tr><td><code>&amp;&amp; ||</code></td><td>Và / hoặc</td><td><code>a &gt; 0 &amp;&amp; a &lt; 10</code></td></tr>
-        </table>
-        <div class="note note--warn"><code class="inline">=</code> là <b>gán giá trị</b>, còn <code class="inline">===</code> mới là <b>so sánh</b>. Nhầm hai cái này là lỗi kinh điển.</div>
-      </div>
-      <div class="example stack" data-run data-size="short">
-        <div class="codes">
-          <div class="codewrap"><div class="label">HTML</div><pre><code data-lang="html">&lt;button onclick="chao()"&gt;Bấm để chào&lt;/button&gt;
-&lt;p id="kq"&gt;&lt;/p&gt;</code></pre></div>
-          <div class="codewrap"><div class="label">JS</div><pre><code data-lang="js">function chao() {
-  // prompt: hỏi người dùng một câu
-  let ten = prompt("Bạn tên gì?");
-  // alert: hiện hộp thoại thông báo
-  alert("Chào bạn, " + ten + "!");
-  document.getElementById("kq").innerText = "Xin chào " + ten;
-}</code></pre></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="slide" data-chapter="JavaScript">
-  <div class="inner">
-    <h2>Câu lệnh điều kiện: if / else</h2>
-    <p class="lead">"Nếu… thì… còn không thì…" — cách máy tính ra quyết định.</p>
-    <div class="example" data-run data-size="tall">
-      <div class="codes">
-        <div class="codewrap"><div class="label">HTML</div><pre><code data-lang="html">&lt;input type="number" id="diem" placeholder="Nhập điểm 0-10"&gt;
-&lt;button onclick="xepLoai()"&gt;Xếp loại&lt;/button&gt;
-&lt;h3 id="kq"&gt;&lt;/h3&gt;</code></pre></div>
-        <div class="codewrap"><div class="label">JS</div><pre><code data-lang="js">function xepLoai() {
-  // Lấy giá trị người dùng nhập, đổi sang số
-  let diem = Number(document.getElementById("diem").value);
-  let ketQua;
-
-  if (diem &gt;= 9) {
-    ketQua = "Xuất sắc 🏆";
-  } else if (diem &gt;= 7) {
-    ketQua = "Khá 👍";
-  } else if (diem &gt;= 5) {
-    ketQua = "Trung bình 🙂";
-  } else {
-    ketQua = "Cần cố gắng 💪";
-  }
-
-  document.getElementById("kq").innerText = ketQua;
-}</code></pre></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="slide" data-chapter="JavaScript">
-  <div class="inner">
-    <h2>Vòng lặp: làm việc lặp đi lặp lại</h2>
-    <div class="example" data-run data-size="tall">
-      <div class="codes">
-        <div class="codewrap"><div class="label">HTML</div><pre><code data-lang="html">&lt;div id="out"&gt;&lt;/div&gt;</code></pre></div>
-        <div class="codewrap"><div class="label">JS</div><pre><code data-lang="js">let ketQua = "";
-
-// for: lặp 5 lần, i chạy từ 1 đến 5
-for (let i = 1; i &lt;= 5; i++) {
-  ketQua += "Dòng số " + i + "&lt;br&gt;";
-}
-
-// Lặp qua từng phần tử của mảng
-let monHoc = ["Toán", "Văn", "Lập trình"];
-for (let mon of monHoc) {
-  ketQua += "📚 " + mon + "&lt;br&gt;";
-}
-
-// Bảng cửu chương 3
-for (let i = 1; i &lt;= 5; i++) {
-  ketQua += "3 x " + i + " = " + (3 * i) + "&lt;br&gt;";
-}
-
-document.getElementById("out").innerHTML = ketQua;</code></pre></div>
-      </div>
-    </div>
-    <div class="note"><code class="inline">i++</code> nghĩa là "tăng i thêm 1". Thiếu nó → vòng lặp chạy mãi mãi và trình duyệt bị treo.</div>
-  </div>
-</section>
-
-<section class="slide" data-chapter="JavaScript">
-  <div class="inner">
-    <h2>Hàm — đóng gói một việc để dùng lại</h2>
-    <div class="example" data-run data-size="tall">
-      <div class="codes">
-        <div class="codewrap"><div class="label">HTML</div><pre><code data-lang="html">&lt;div id="out"&gt;&lt;/div&gt;</code></pre></div>
-        <div class="codewrap"><div class="label">JS</div><pre><code data-lang="js">// Hàm không nhận dữ liệu
-function chaoMoi() {
-  return "Chào mừng đến với MindX!";
-}
-
-// Hàm nhận tham số và TRẢ VỀ kết quả
-function tinhTong(a, b) {
-  return a + b;
-}
-
-// Hàm tính diện tích hình chữ nhật
-function dienTich(dai, rong) {
-  return dai * rong;
-}
-
-document.getElementById("out").innerHTML =
-  chaoMoi() + "&lt;br&gt;" +
-  "2 + 3 = " + tinhTong(2, 3) + "&lt;br&gt;" +
-  "10 + 25 = " + tinhTong(10, 25) + "&lt;br&gt;" +
-  "Diện tích 5x4 = " + dienTich(5, 4);</code></pre></div>
-      </div>
-    </div>
-    <div class="note note--tip">Viết hàm một lần, gọi bao nhiêu lần cũng được với dữ liệu khác nhau. Đó là nguyên tắc <b>DRY</b> — đừng lặp lại chính mình.</div>
-  </div>
-</section>
-
-<section class="slide" data-chapter="JavaScript">
-  <div class="inner">
-    <h2>DOM — JavaScript "chạm" vào HTML</h2>
-    <p class="lead">DOM là bản đồ các phần tử HTML mà JS có thể đọc và sửa.</p>
-    <div class="grid grid-2">
-      <div>
-        <table class="tbl">
-          <tr><th>Câu lệnh</th><th>Công dụng</th></tr>
-          <tr><td><code>getElementById("x")</code></td><td>Lấy phần tử theo id</td></tr>
-          <tr><td><code>querySelector(".x")</code></td><td>Lấy phần tử đầu tiên khớp selector CSS</td></tr>
-          <tr><td><code>.innerText</code></td><td>Đọc / ghi phần chữ</td></tr>
-          <tr><td><code>.innerHTML</code></td><td>Đọc / ghi cả thẻ HTML bên trong</td></tr>
-          <tr><td><code>.value</code></td><td>Lấy nội dung người dùng gõ vào input</td></tr>
-          <tr><td><code>.style.color</code></td><td>Sửa CSS trực tiếp</td></tr>
-          <tr><td><code>.classList.add()</code></td><td>Thêm class (cách làm đẹp hơn)</td></tr>
-        </table>
-      </div>
-      <div class="example stack" data-run data-size="tall">
-        <div class="codes">
-          <div class="codewrap"><div class="label">HTML</div><pre><code data-lang="html">&lt;h3 id="tieude"&gt;Chữ gốc&lt;/h3&gt;
-&lt;p class="mota"&gt;Mô tả ban đầu&lt;/p&gt;
-&lt;button onclick="doi()"&gt;Thay đổi mọi thứ&lt;/button&gt;</code></pre></div>
-          <div class="codewrap"><div class="label">JS</div><pre><code data-lang="js">function doi() {
-  let h = document.getElementById("tieude");
-  h.innerText = "Chữ đã bị JS đổi! ✨";
-  h.style.color = "#ff6b35";
-  h.style.fontSize = "28px";
-
-  document.querySelector(".mota").innerHTML =
-    "Mô tả mới có &lt;b&gt;chữ đậm&lt;/b&gt;";
-
-  document.body.style.background = "#fff7f0";
-}</code></pre></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="slide" data-chapter="JavaScript">
-  <div class="inner">
-    <h2>Sự kiện — lắng nghe người dùng</h2>
-    <div class="example" data-run data-size="tall">
-      <div class="codes">
-        <div class="codewrap"><div class="label">HTML</div><pre><code data-lang="html">&lt;!-- Cách 1: gắn thẳng vào thẻ --&gt;
-&lt;button onclick="alert('Bạn vừa bấm!')"&gt;Bấm tôi&lt;/button&gt;
-
-&lt;!-- Cách 2: gắn bằng JS (chuyên nghiệp hơn) --&gt;
-&lt;button id="nut2"&gt;Đếm số lần bấm&lt;/button&gt;
-&lt;p id="dem"&gt;Đã bấm: 0 lần&lt;/p&gt;
-
-&lt;input id="o-nhap" placeholder="Gõ gì đó..."&gt;
-&lt;p id="guong"&gt;&lt;/p&gt;</code></pre></div>
-        <div class="codewrap"><div class="label">JS</div><pre><code data-lang="js">let soLan = 0;
-
-document.getElementById("nut2").addEventListener("click", function () {
-  soLan++;
-  document.getElementById("dem").innerText = "Đã bấm: " + soLan + " lần";
-});
-
-// Sự kiện gõ phím: chữ hiện ngay lập tức
-document.getElementById("o-nhap").addEventListener("input", function () {
-  let chu = document.getElementById("o-nhap").value;
-  document.getElementById("guong").innerText = "Bạn đang gõ: " + chu;
-});</code></pre></div>
-      </div>
-    </div>
-    <div class="note">Các sự kiện hay dùng: <code class="inline">click</code>, <code class="inline">input</code>, <code class="inline">change</code>, <code class="inline">mouseover</code>, <code class="inline">keydown</code>, <code class="inline">submit</code>.</div>
-  </div>
-</section>
-
-<section class="slide" data-chapter="JavaScript">
-  <div class="inner">
-    <h2>Ví dụ vui: đổi màu nền ngẫu nhiên</h2>
-    <div class="example" data-run data-size="tall">
-      <div class="codes">
-        <div class="codewrap"><div class="label">HTML</div><pre><code data-lang="html">&lt;h3&gt;Máy đổi màu&lt;/h3&gt;
-&lt;button onclick="doiMau()"&gt;🎲 Đổi màu&lt;/button&gt;
-&lt;button onclick="reset()"&gt;↺ Trả lại trắng&lt;/button&gt;
-&lt;p id="ma"&gt;&lt;/p&gt;</code></pre></div>
-        <div class="codewrap"><div class="label">JS</div><pre><code data-lang="js">let mauList = ["#ff6b35", "#4cc9f0", "#3ddc97", "#ffd166", "#b085ff"];
-
-function doiMau() {
-  // Math.random() cho số ngẫu nhiên từ 0 đến dưới 1
-  let viTri = Math.floor(Math.random() * mauList.length);
-  let mau = mauList[viTri];
-
-  document.body.style.background = mau;
-  document.getElementById("ma").innerText = "Mã màu: " + mau;
-}
-
-function reset() {
-  document.body.style.background = "white";
-  document.getElementById("ma").innerText = "";
-}</code></pre></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ======================= 5. GHÉP CẢ 3 ======================= -->
-
-<section class="slide slide--section" data-chapter="Thực hành">
-  <div class="inner">
-    <div class="kicker">PHẦN 4</div>
-    <h1>Ghép cả ba lại với nhau</h1>
-    <p>HTML dựng khung → CSS làm đẹp → JavaScript thổi hồn. Đây là quy trình bạn sẽ lặp lại trong mọi dự án web.</p>
-  </div>
-</section>
-
-<section class="slide" data-chapter="Thực hành">
-  <div class="inner">
-    <h2>Dự án mẫu: Thẻ giới thiệu có tương tác</h2>
-    <div class="example" data-run data-size="tall">
-      <div class="codes">
-        <div class="codewrap"><div class="label">HTML</div><pre><code data-lang="html">&lt;div class="the" id="the"&gt;
-  &lt;img src="https://picsum.photos/id/1005/90/90" alt="Ảnh đại diện"&gt;
-  &lt;h2&gt;Nguyễn Văn An&lt;/h2&gt;
-  &lt;p class="chuc"&gt;Học viên MindX · Lớp Web cơ bản&lt;/p&gt;
-  &lt;p id="loi"&gt;Bấm nút để nhận lời chúc hôm nay!&lt;/p&gt;
-  &lt;button onclick="chuc()"&gt;🎁 Lời chúc&lt;/button&gt;
-  &lt;button onclick="doiTheme()"&gt;🌙 Đổi giao diện&lt;/button&gt;
-&lt;/div&gt;</code></pre></div>
-        <div class="codewrap"><div class="label">CSS</div><pre><code data-lang="css">body { background: #f4f6fb; }
-.the {
-  max-width: 320px; margin: 0 auto; padding: 22px;
-  background: #fff; border-radius: 18px; text-align: center;
-  box-shadow: 0 10px 28px rgba(0,0,0,.12);
-  transition: .3s;
-}
-.the img { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; }
-.the h2 { margin: 10px 0 4px; }
-.chuc { color: #888; font-size: 14px; margin-top: 0; }
-button {
-  background: #ff6b35; color: #fff; border: 0; margin: 4px;
-  padding: 9px 16px; border-radius: 99px; cursor: pointer; transition: .2s;
-}
-button:hover { transform: scale(1.06); }
-.toi { background: #1c2145; color: #fff; }
-.toi .chuc { color: #aab; }</code></pre></div>
-        <div class="codewrap"><div class="label">JS</div><pre><code data-lang="js">let loiChuc = [
-  "Hôm nay bạn sẽ viết code không lỗi! 🐛",
-  "Một ngày thật nhiều năng lượng! ⚡",
-  "Cứ sai đi, vì code nào cũng sửa được 💪",
-  "Bạn giỏi hơn bạn nghĩ đấy! 🌟"
-];
-
-function chuc() {
-  let i = Math.floor(Math.random() * loiChuc.length);
-  document.getElementById("loi").innerText = loiChuc[i];
-}
-
-function doiTheme() {
-  // classList.toggle: có thì bỏ, chưa có thì thêm
-  document.getElementById("the").classList.toggle("toi");
-}</code></pre></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="slide" data-chapter="Thực hành">
-  <div class="inner">
-    <h2>Kiểm tra nhanh — bấm vào câu hỏi để xem đáp án</h2>
-    <div class="quiz">
-      <div class="q">
-        <b>1.</b> Thẻ nào bọc phần nội dung mà người dùng nhìn thấy? <span class="hint">(bấm để lật)</span>
-        <div class="ans">→ <code class="inline">&lt;body&gt;</code>. Còn <code class="inline">&lt;head&gt;</code> chứa thông tin ẩn.</div>
-      </div>
-      <div class="q">
-        <b>2.</b> Muốn nhiều phần tử dùng chung một kiểu CSS thì nên dùng <code class="inline">class</code> hay <code class="inline">id</code>?
-        <div class="ans">→ <code class="inline">class</code>. <code class="inline">id</code> phải là duy nhất trên toàn trang.</div>
-      </div>
-      <div class="q">
-        <b>3.</b> Khoảng trắng <u>bên trong</u> viền của một hộp gọi là gì?
-        <div class="ans">→ <code class="inline">padding</code>. Bên ngoài viền là <code class="inline">margin</code>.</div>
-      </div>
-      <div class="q">
-        <b>4.</b> <code class="inline">let x = 5</code> và <code class="inline">const x = 5</code> khác nhau ra sao?
-        <div class="ans">→ <code class="inline">let</code> cho phép gán lại giá trị sau này, <code class="inline">const</code> thì không.</div>
-      </div>
-      <div class="q">
-        <b>5.</b> Câu lệnh nào lấy ra phần tử có <code class="inline">id="tieude"</code>?
-        <div class="ans">→ <code class="inline">document.getElementById("tieude")</code> hoặc <code class="inline">document.querySelector("#tieude")</code>.</div>
-      </div>
-      <div class="q">
-        <b>6.</b> Vì sao nên đặt thẻ <code class="inline">&lt;script&gt;</code> ở cuối <code class="inline">&lt;body&gt;</code>?
-        <div class="ans">→ Để HTML được vẽ xong trước, JS mới tìm thấy các phần tử cần thao tác.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="slide" data-chapter="Thực hành">
-  <div class="inner">
-    <h2>Những lỗi hay gặp &amp; cách xử lý</h2>
-    <table class="tbl">
-      <tr><th>Hiện tượng</th><th>Nguyên nhân thường gặp</th><th>Cách sửa</th></tr>
-      <tr><td>Trang trắng tinh</td><td>Sai tên file hoặc mở nhầm file</td><td>Kiểm tra file phải là <code>index.html</code></td></tr>
-      <tr><td>Tiếng Việt thành ô vuông</td><td>Thiếu bảng mã</td><td>Thêm <code>&lt;meta charset="UTF-8"&gt;</code></td></tr>
-      <tr><td>CSS không ăn</td><td>Sai đường dẫn <code>href</code>, quên dấu <code>;</code>, sai tên class</td><td>F12 → tab Network/Elements để kiểm tra</td></tr>
-      <tr><td>Ảnh không hiện</td><td>Sai <code>src</code> hoặc file ảnh khác thư mục</td><td>Đặt ảnh cùng thư mục, gõ đúng tên kể cả HOA/thường</td></tr>
-      <tr><td>Nút bấm không phản ứng</td><td>Sai tên hàm, quên <code>()</code>, script đặt sai chỗ</td><td>Mở Console xem dòng đỏ báo lỗi</td></tr>
-      <tr><td><code>null</code> khi lấy phần tử</td><td>JS chạy trước khi HTML tồn tại</td><td>Chuyển <code>&lt;script&gt;</code> xuống cuối <code>&lt;body&gt;</code></td></tr>
-      <tr><td>Trình duyệt treo</td><td>Vòng lặp vô tận (quên <code>i++</code>)</td><td>Đóng tab, kiểm tra điều kiện dừng</td></tr>
-    </table>
-    <div class="note note--tip"><b>Nguyên tắc vàng:</b> luôn mở Console (<kbd>F12</kbd>) khi code. 90% lỗi đã được trình duyệt chỉ rõ ở đó.</div>
-  </div>
-</section>
-
-<section class="slide" data-chapter="Thực hành">
-  <div class="inner">
-    <h2>📝 Bài tập về nhà</h2>
-    <div class="grid grid-2">
-      <div class="task">
-        <h3>Bắt buộc — Trang cá nhân hoàn chỉnh</h3>
-        <ol>
-          <li>3 file: <code class="inline">index.html</code>, <code class="inline">style.css</code>, <code class="inline">script.js</code>.</li>
-          <li>Có ảnh đại diện bo tròn, tiêu đề, phần giới thiệu, danh sách sở thích.</li>
-          <li>Dùng Flexbox xếp ít nhất một khu vực thành nhiều cột.</li>
-          <li>Có hiệu ứng <code class="inline">:hover</code> cho nút hoặc thẻ.</li>
-          <li>Có <b>1 nút bấm được</b> làm một việc bất kỳ bằng JS (đổi màu, hiện chữ, đếm số…).</li>
-        </ol>
-      </div>
-      <div class="task" style="border-color: rgba(76,201,240,.45); background: rgba(76,201,240,.07)">
-        <h3 style="color: var(--blue)">Nâng cao — chọn 1 trong 3 ⭐</h3>
-        <ol>
-          <li><b>Máy tính đơn giản:</b> 2 ô nhập + 4 nút cộng trừ nhân chia, hiện kết quả.</li>
-          <li><b>Trò đoán số:</b> máy nghĩ số 1–100, người chơi đoán, gợi ý "lớn hơn / nhỏ hơn".</li>
-          <li><b>Danh sách việc cần làm:</b> gõ việc → bấm Thêm → việc xuất hiện trong danh sách.</li>
-        </ol>
-      </div>
-    </div>
-    <div class="note"><b>Nộp bài:</b> nén thư mục thành file .zip, hoặc đăng lên CodePen/Replit rồi gửi link cho giáo viên.</div>
-  </div>
-</section>
-
-<section class="slide" data-chapter="Tổng kết">
-  <div class="inner">
-    <h2>Tổng kết buổi 1</h2>
-    <div class="grid grid-3">
-      <div class="card card--html">
-        <h3>HTML</h3>
-        <span class="pill pill--html">h1-h6</span><span class="pill pill--html">p</span><span class="pill pill--html">a</span>
-        <span class="pill pill--html">img</span><span class="pill pill--html">ul/ol/li</span><span class="pill pill--html">table</span>
-        <span class="pill pill--html">div/span</span><span class="pill pill--html">form/input</span><span class="pill pill--html">button</span>
-      </div>
-      <div class="card card--css">
-        <h3>CSS</h3>
-        <span class="pill pill--css">selector</span><span class="pill pill--css">color</span><span class="pill pill--css">font</span>
-        <span class="pill pill--css">box model</span><span class="pill pill--css">flexbox</span><span class="pill pill--css">hover</span>
-        <span class="pill pill--css">transition</span><span class="pill pill--css">border-radius</span>
-      </div>
-      <div class="card card--js">
-        <h3>JavaScript</h3>
-        <span class="pill pill--js">let/const</span><span class="pill pill--js">if/else</span><span class="pill pill--js">for</span>
-        <span class="pill pill--js">function</span><span class="pill pill--js">DOM</span><span class="pill pill--js">event</span>
-        <span class="pill pill--js">console.log</span>
-      </div>
-    </div>
-    <h3 style="margin-top:24px">Học tiếp ở đâu?</h3>
-    <div class="grid grid-2">
-      <ul>
-        <li><b>mindxschool.gitbook.io/c4e</b> — tài liệu chính của khoá.</li>
-        <li><b>w3schools.com</b> — tra cú pháp nhanh, có nút "Try it yourself".</li>
-        <li><b>developer.mozilla.org</b> (MDN) — tài liệu chuẩn, đầy đủ nhất.</li>
-      </ul>
-      <ul>
-        <li><b>flexboxfroggy.com</b> — chơi game học Flexbox.</li>
-        <li><b>codepen.io</b> — xem và nghịch code của người khác.</li>
-        <li><b>freecodecamp.org</b> — lộ trình học miễn phí có chứng chỉ.</li>
-      </ul>
-    </div>
-    <div class="note note--tip"><b>Lời khuyên:</b> mỗi ngày code 20 phút tốt hơn mỗi tuần code 3 tiếng. Và đừng sợ sai — mọi lập trình viên đều bắt đầu bằng một trang trắng và rất nhiều lỗi.</div>
-  </div>
-</section>
-
-<section class="slide slide--title" data-chapter="Tổng kết">
-  <div class="inner">
-    <h1>Hẹn gặp lại<br>ở buổi 2!</h1>
-    <p class="sub">Buổi sau: dựng bố cục hoàn chỉnh với Flexbox &amp; Grid, làm trang web nhiều phần (header, banner, footer) và bắt đầu dự án cá nhân.</p>
-    <p class="meta">Mọi câu hỏi → hỏi ngay giáo viên hoặc nhóm lớp. Chúc bạn code vui! 🚀</p>
-  </div>
-</section>
-
-</div><!-- /.deck -->
-
-<div class="counter"></div>
-<div class="navbar">
-  <button class="btn-menu" title="Mục lục (O)">☰ Mục lục</button>
-  <button class="btn-prev" title="Slide trước (←)">←</button>
-  <button class="btn-next" title="Slide sau (→)">→</button>
-</div>
-
-<div class="overview">
-  <h3>Mục lục — bấm để nhảy tới slide (Esc để đóng)</h3>
-  <div class="ov-grid"></div>
-</div>
-
-<script src="assets/deck.js"></script>
 </body>
 </html>
