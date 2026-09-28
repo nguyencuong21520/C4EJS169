@@ -1,0 +1,26 @@
+'use strict';
+const versionsRoot=document.querySelector('#versions');
+Object.values(CAPSTONE_VERSIONS).forEach((version,index)=>{
+  const number=index+1;
+  const article=document.createElement('article');
+  article.className='milestone';
+  const badge=document.createElement('div');
+  badge.className='lesson';
+  badge.textContent='V'+String(number).padStart(2,'0');
+  const content=document.createElement('div');
+  const title=document.createElement('h3');
+  title.textContent=version.title;
+  const outcome=document.createElement('p');
+  const focus=document.createElement('b');
+  focus.textContent=version.focus+': ';
+  outcome.append(focus,document.createTextNode(version.outcome));
+  const commit=document.createElement('code');
+  commit.textContent=version.commit;
+  content.append(title,outcome,commit);
+  const link=document.createElement('a');
+  link.className='open';
+  link.href='lesson-'+String(number).padStart(2,'0')+'.html';
+  link.textContent='Xem version →';
+  article.append(badge,content,link);
+  versionsRoot.appendChild(article);
+});
