@@ -1,0 +1,30 @@
+*{
+    box-sizing: border-box;
+}
+.container{
+    width: 302px;
+    height: auto;
+    border-radius: 20px;
+    border: 2px solid #ccc;
+    padding: 20px;
+    padding-bottom: 5px;
+}
+
+.ava{
+    width: 260px;
+    height: 80px;
+    background-color: rgb(223, 227, 238);
+    border-radius: 20px;
+    text-align: center;
+    align-items: center;
+    line-height: 80px;
+}
+button{
+    width: 104px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    background: rgb(28, 35, 51);
+    color: white;
+    font-weight: bold;
+}

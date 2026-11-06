@@ -1,0 +1,27 @@
+.box{
+    width: 100px;
+    height: 100px;
+    border: 2px solid black;
+}
+
+.container{
+    display : flex;
+    height: 400px;
+    background-color: lightgray;
+
+}
+
+.box1{
+    background-color: lightblue;
+
+}
+
+.box2{
+    background-color: lightgreen;
+ 
+}
+
+.box3{
+    background-color: lightcoral;
+
+}

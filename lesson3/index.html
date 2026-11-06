@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 3 · Bài tập Box Model - Project Card + Badge</title>
+
+<style>
+/* ============================================================
+   PHẦN 0 · CSS CỦA ĐỀ BÀI - KHÔNG CẦN SỬA
+   (chỉ để trang đề nhìn dễ đọc)
+   ============================================================ */
+body{font-family:Arial,Helvetica,sans-serif;line-height:1.6;margin:0;padding:32px;background:#f5f6fa;color:#1c2333}
+.brief{max-width:760px;margin:0 auto 32px;background:#fff;border:1px solid #dfe3ee;border-radius:12px;padding:24px}
+.brief h1{margin:0 0 4px;font-size:24px}
+.brief h2{font-size:16px;margin:22px 0 8px;color:#d2401e}
+.brief code{background:#eef0f7;padding:1px 5px;border-radius:4px;font-size:13px}
+.brief ol,.brief ul{margin:0;padding-left:20px}
+.brief li{margin-bottom:6px}
+.target{display:block;max-width:360px;margin:12px 0}
+.playground{max-width:760px;margin:0 auto}
+.playground>h2{font-size:16px;color:#d2401e}
+
+
+/* ============================================================
+   PHẦN 1 · CSS CỦA BẠN - LÀM BÀI Ở ĐÂY
+   Làm lần lượt từ TODO 1 đến TODO 6.
+   ============================================================ */
+
+/* TODO 1 - Cho mọi phần tử dùng border-box
+   (gợi ý: selector *, *::before, *::after) */
+
+
+.card{
+  /* TODO 2 - Chiếc hộp:
+     - width 320px và PHẢI rộng đúng 320px kể cả padding + border
+     - padding 20px
+     - border 2px solid #d9def0
+     - border-radius 16px
+     - background trắng
+     - cách card bên dưới 24px bằng MARGIN (không dùng padding) */
+}
+
+.card + .card{
+  /* TODO 3 - Không bắt buộc: thử margin-top ở đây thay vì ở .card
+     rồi mở DevTools xem hộp màu cam (margin) thay đổi thế nào. */
+}
+
+.card__thumb{
+  /* TODO 4 - Ảnh rộng bằng đúng phần content của card (tức là 100%),
+     cao 150px, object-fit: cover, bo góc 10px,
+     và cách phần chữ bên dưới 14px. */
+}
+
+.card__title{
+  /* TODO 4b - margin trên = 0 để chữ không bị đẩy xuống ngoài ý muốn */
+}
+
+.card__meta{
+  /* TODO 4c - màu chữ xám #6b7280, font-size 14px */
+}
+
+.badge{
+  /* TODO 5 - Badge "MỚI" nằm ở GÓC TRÊN BÊN PHẢI và nhô ra ngoài card 8px.
+     Gợi ý: .card cần position: relative, .badge cần position: absolute
+     với top: -8px; right: -8px.
+     Trang trí: padding 4px 10px, border-radius 999px,
+     background #ff6b35, màu chữ trắng, font-size 12px, chữ in đậm. */
+}
+
+.card:hover{
+  /* TODO 6 - Khi hover: đổi border-color sang #ff6b35.
+     Lưu ý: KHÔNG được đổi độ dày border khi hover,
+     vì card sẽ bị "nhảy" - hãy giải thích vì sao. */
+}
+</style>
+</head>
+
+<body>
+
+<!-- ======================= ĐỀ BÀI ======================= -->
+<section class="brief">
+  <h1>Bài tập thực hành · Box Model</h1>
+  <p><b>Lesson 3 · Box Model &amp; Position</b> — thời gian làm: khoảng 20 phút.</p>
+
+  <h2>Yêu cầu</h2>
+  <p>Dựng <b>Project Card có badge</b> giống hình mô tả bên dưới. Phần HTML đã có sẵn ở cuối trang,
+     bạn <b>chỉ viết CSS</b> trong “PHẦN 1 · CSS CỦA BẠN”.</p>
+
+  <svg class="target" viewBox="0 0 360 250" role="img" aria-label="Mô tả kết quả mong muốn: card có badge ở góc trên phải">
+    <rect x="20" y="30" width="300" height="200" rx="16" fill="#fff" stroke="#d9def0" stroke-width="2"/>
+    <rect x="40" y="50" width="260" height="80" rx="10" fill="#dfe3ee"/>
+    <text x="170" y="96" text-anchor="middle" fill="#8a93ad" style="font:400 13px Arial">thumbnail 100% × 150px</text>
+    <text x="40" y="158" fill="#1c2333" style="font:700 15px Arial">Student Tech Portfolio</text>
+    <text x="40" y="180" fill="#6b7280" style="font:400 13px Arial">HTML · CSS · 3 trang</text>
+    <rect x="40" y="196" width="104" height="30" rx="8" fill="#1c2333"/>
+    <text x="92" y="216" text-anchor="middle" fill="#fff" style="font:700 12px Arial">Xem chi tiết</text>
+    <rect x="276" y="22" width="60" height="22" rx="11" fill="#ff6b35"/>
+    <text x="306" y="37" text-anchor="middle" fill="#fff" style="font:700 11px Arial">MỚI</text>
+    <path d="M20 248h300M20 242v12M320 242v12" stroke="#2d8cf0" stroke-width="1.4" fill="none"/>
+    <text x="170" y="240" text-anchor="middle" fill="#2d8cf0" style="font:700 11px Arial">tổng bề rộng hiển thị = 320px</text>
+  </svg>
+
+  <h2>Checklist (bạn tự chấm)</h2>
+  <ol>
+    <li>Card rộng <b>đúng 320px</b> khi đo bằng DevTools, <b>đã bao gồm</b> padding 20px và border 2px.</li>
+    <li>Khoảng cách giữa hai card là <b>24px</b> và được tạo bằng <code>margin</code>, không phải <code>padding</code>.</li>
+    <li>Badge nằm ở góc trên bên phải và <b>nhô ra ngoài</b> viền card 8px.</li>
+    <li>Badge không làm xô lệch chữ hay ảnh bên trong card (nó đã rời khỏi normal flow).</li>
+    <li>Hover đổi màu viền mà card <b>không bị nhảy</b> một pixel nào.</li>
+    <li>Không dùng <code>position</code> để xếp ảnh / tiêu đề / nút — chúng đi theo normal flow.</li>
+  </ol>
+
+  <h2>Câu hỏi suy nghĩ (trả lời trong comment ở cuối file CSS)</h2>
+  <ul>
+    <li>Nếu <b>không</b> dùng <code>border-box</code>, card sẽ rộng bao nhiêu pixel? Tính ra giấy trước rồi mới kiểm tra bằng DevTools.</li>
+    <li>Vì sao <code>margin</code> không được tính vào <code>width</code> dù <code>padding</code> và <code>border</code> thì có?</li>
+    <li>Nếu bỏ <code>position: relative</code> ở <code>.card</code> thì badge sẽ bám vào đâu? Thử xóa và quan sát.</li>
+  </ul>
+
+  <h2>Thử thách thêm (nếu xong sớm)</h2>
+  <ul>
+    <li>Thêm card thứ ba và kiểm tra khoảng cách vẫn đúng 24px.</li>
+    <li>Làm badge thứ hai ở góc <b>dưới bên trái</b> ghi “Đang làm”, dùng <code>bottom</code> và <code>left</code>.</li>
+  </ul>
+</section>
+
+
+<!-- ======================= KHU LÀM BÀI ======================= -->
+<section class="playground">
+  <h2>Kết quả của bạn</h2>
+
+  <!-- HTML đã cho sẵn - không cần sửa, chỉ viết CSS ở trên -->
+  <article class="card">
+    <span class="badge">MỚI</span>
+    <img class="card__thumb" src="https://picsum.photos/id/180/600/400" alt="Ảnh dự án portfolio">
+    <h3 class="card__title">Student Tech Portfolio</h3>
+    <p class="card__meta">HTML · CSS · 3 trang</p>
+    <button>Xem chi tiết</button>
+  </article>
+
+  <article class="card">
+    <span class="badge">MỚI</span>
+    <img class="card__thumb" src="https://picsum.photos/id/160/600/400" alt="Ảnh dự án landing page">
+    <h3 class="card__title">Coffee Landing Page</h3>
+    <p class="card__meta">HTML · CSS · 1 trang</p>
+    <button>Xem chi tiết</button>
+  </article>
+</section>
+
+</body>
+</html>

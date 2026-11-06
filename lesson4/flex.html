@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 24px;
+            padding: 24px;
+            min-height: 100vh;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: #f1f1f1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .b1 {
+            background-color: #ff9999;
+        }
+
+        .b2 {
+            background-color: #99ccff;
+        }
+
+        .b3 {
+            background-color: #99ff99;
+        }
+
+        @media (min-width: 641px) and (max-width: 900px) {
+            .container {
+                gap: 16px;
+                padding: 20px;
+            }
+
+            .box {
+                width: 160px;
+                height: 160px;
+                font-size: 22px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                flex-direction: column;
+                justify-content: center;
+                gap: 20px;
+                padding: 20px;
+            }
+
+            .box {
+                width: min(80vw, 260px);
+                height: 150px;
+            }
+
+            .b3 {
+                background-color: red;
+            }
+
+            .b1 {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="box b1">Box 1</div>
+        <div class="box b2">Box 2</div>
+        <div class="box b3">Box 3</div>
+
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,17 @@
+.header-class{
+    width: 1000px
+}
+
+.logo{
+    background: red;
+    width: 200px;
+}
+.menu{
+    background: blue;
+    width : 600px;
+}
+
+.cart-button{
+    background: green;
+    width: 200px;
+}
